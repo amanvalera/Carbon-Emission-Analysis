@@ -60,8 +60,6 @@ Interactive, single‑page D3.js visualizations exploring **population vs. CO₂
 - **Technical Report (original PDF, coursework‑formatted):** includes Intro/Design/User/Dev guides and feature overview.  
 - **External links (mentioned in report):** GitHub repo + demo video.
 
-> A **sanitized** Markdown version (without coursework metadata/requirements) has been prepared as `docs/Carbon_Emission_Analysis_Technical_Report.md`. Source content derived from the PDF above.
-
 ---
 
 ## Known issues / TODO
@@ -70,9 +68,3 @@ Interactive, single‑page D3.js visualizations exploring **population vs. CO₂
 - **Map key alignment:** confirm GeoJSON feature key used for coloring (`d.id`) matches Map data keys (ISO3 / Country Code) for both layers.  
 - **Data licensing/attribution:** **NOT PROVIDED** — add a `references/ATTRIBUTION.md` once confirmed.
 
----
-
-## Getting involved
-1. Open an issue for bugs or inconsistencies.  
-2. Submit PRs with targeted changes.  
-3. Keep all new code client‑side with D3.js v7 unless requirements change.
