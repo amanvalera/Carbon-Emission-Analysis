@@ -1,0 +1,170 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Carbon Emission Analysis</title>
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v7.js"></script>
+    
+    <!-- Add CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bfbfbf;
+
+        }
+        
+        .tooltip {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 8px;
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            font-size: 12px;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 20px;
+            background-color: #767676;
+        }
+        
+        .map-container {
+            margin-bottom: 30px;
+            text-align: center;
+            background-color: #767676;
+        }
+        
+        .map-container p {
+            margin-bottom: 10px;
+        }
+        
+        .buttons-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .buttons-container button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        
+        .buttons-container button:hover {
+            background-color: #0056b3;
+        }
+        
+        .charts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .chart-container {
+            width: 100%;
+            min-height: 300px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .chart-container p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .h1 p{
+            text-align: center;
+        }
+        
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #00aaff;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+</head>
+<body>
+    <button onclick="topFunction()" id="back-to-top-btn" title="Go to top">Top</button>
+    <div class="container">
+        <h1 style="text-align: center;">Carbon Emission</h1>
+        <p>This web page displays a map that shows the population and carbon emission data for various countries in the year 2018. You can click on any country on the map to analyze further. The page also includes additional charts that provide insights on carbon emission, GDP, and temperature change over time.</p>
+        <div class="map-container">
+            <p>This map shows Population and Carbon Emission in 2018 on the Map</p>
+            <p>Click any Country on the map to analyze further</p>
+            <!-- Add 2 buttons -->
+            <div class="buttons-container">
+                <button onclick="plotData1()">Population</button>
+                <button onclick="plotData2()">Carbon Emission</button>
+            </div>
+            <div id="my_mapdataviz"></div>
+        </div>
+        <div class="charts-container">
+            <div class="chart-container">
+                <p>This Line Chart shows Carbon Emission over Time</p>
+                <div id="my_linedataviz"></div>
+            </div>
+            <div class="chart-container">
+                <p>This Pie Chart shows distribution of the sources of carbon emission in 2018</p>
+                <div id="my_dataviz"></div>
+            </div>
+            <div class="chart-container">
+                <p>This Area Chart shows the GDP of the selected country</p>
+                <div id="my_areadataviz"></div>
+            </div>
+            <div class="chart-container">
+                <p>This Line Chart shows Temperature change over Time</p>
+                <div id="my_tlinedataviz"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the JavaScript files -->
+    <script src="./JS/map.js"></script>
+<script src="./JS/emisionLine.js"></script>
+<script src="./JS/emisionPie.js"></script>
+<script src="./JS/gdpArea.js"></script>
+<script src="./JS/tempLine.js"></script>
+<script>
+     // Get the button element
+     var button = document.getElementById("back-to-top-btn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
