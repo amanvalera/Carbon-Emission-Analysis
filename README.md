@@ -60,11 +60,3 @@ Interactive, single‑page D3.js visualizations exploring **population vs. CO₂
 - **Technical Report (original PDF, coursework‑formatted):** includes Intro/Design/User/Dev guides and feature overview.  
 - **External links (mentioned in report):** GitHub repo + demo video.
 
----
-
-## Known issues / TODO
-- **tempLine:** computes `tLine_max`/`tLine_min` from `eFilteredData` (undefined in this file) → fix to use `tFilteredData`.  
-- **Axis label typo:** “Carbon **Emssion** (mt)” in emissions line chart.  
-- **Map key alignment:** confirm GeoJSON feature key used for coloring (`d.id`) matches Map data keys (ISO3 / Country Code) for both layers.  
-- **Data licensing/attribution:** **NOT PROVIDED** — add a `references/ATTRIBUTION.md` once confirmed.
-
